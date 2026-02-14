@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Momma ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#000000,#ff4d6d);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.hidden{display:none;}
+.container{padding:20px;}
+
+h1{font-size:28px;}
+h2{margin-top:40px;}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+font-weight:bold;
+margin-top:15px;
+}
+
+input{
+padding:12px;
+border-radius:30px;
+border:none;
+width:70%;
+}
+
+img{
+width:90%;
+margin:15px 0;
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,255,255,0.4);
+transition:0.4s;
+}
+
+img:hover{
+transform:scale(1.05);
+}
+
+audio{
+display:none;
+}
+
+.secret{
+margin-top:20px;
+padding:15px;
+background:rgba(255,255,255,0.1);
+border-radius:20px;
+display:none;
+}
+
+.fade{animation:fadeIn 2s ease-in;}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div id="lock" class="container">
+<h2>Open at 12:00 AM ❤️</h2>
+<p>This is only for my Momma 💗</p>
+<input type="password" id="pass" placeholder="Enter Password">
+<br>
+<button onclick="unlock()">Unlock</button>
+</div>
+
+<div id="main" class="hidden container fade">
+
+<h1>Happy Valentine's Day Reshma 🎀</h1>
+
+<h2>💌 Secret Messages</h2>
+
+<button onclick="showSecret(1)">Open Message 1</button>
+<div id="secret1" class="secret">
+Momma... you were my sunlight 🌞
+</div>
+
+<button onclick="showSecret(2)">Open Message 2</button>
+<div id="secret2" class="secret">
+The moon is beautiful isn't it 🌙
+</div>
+
+<button onclick="showSecret(3)">Open Message 3</button>
+<div id="secret3" class="secret">
+Still I remember our first meet... brown/maroon tshirt with black pants...
+Your eyes still hold that love 💗
+</div>
+
+<button onclick="showSecret(4)">Open Message 4</button>
+<div id="secret4" class="secret">
+Dec 4... the most unexpected day.
+Nana pudingunathavey irukatum...
+Still the love I had in your eyes 🤌🏻😮‍💨
+</div>
+
+<h2>📸 Our Memories</h2>
+
+<img src="images/1000189665.jpg">
+<img src="images/1000189664.jpg">
+<img src="images/1000189663.jpg">
+<img src="images/1000189565.jpg">
+<img src="images/1000189564.jpg">
+<img src="images/1000189563.jpg">
+<img src="images/1000164018.jpg">
+<img src="images/1000164017.jpg">
+
+<h2>Forever With You 💍</h2>
+
+<p>
+In every lifetime, I will choose you.<br>
+Forever yours,<br>
+Sam / Papa / Babe ❤️
+</p>
+
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="songs/kaadhal-neethana_CUTTER_1771042346816.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function unlock(){
+var entered=document.getElementById("pass").value;
+if(entered==="MOMMA"){
+document.getElementById("lock").classList.add("hidden");
+document.getElementById("main").classList.remove("hidden");
+
+var music = document.getElementById("bgMusic");
+music.volume = 0.4;
+music.play();
+}else{
+alert("Wrong password Momma 😜");
+}
+}
+
+function showSecret(num){
+document.getElementById("secret"+num).style.display="block";
+}
+</script>
+
+</body>
+</html>
